@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=SleepHistory
+Comment=Monitor computer usage
+Icon=sleephistory
+Exec=sleephistory
+Terminal=true
+Categories=System;Monitor;ConsoleOnly;Utility;
+Keywords=system;monitoring;power;sleep;hibernate;shutdown;uptime;history;log;activity;activity-monitor;tui;
+StartupNotify=false

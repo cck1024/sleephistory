@@ -1,0 +1,103 @@
+===============================================================================
+                  SLEEPHISTORY - SCHNELLSTART-ANLEITUNG
+===============================================================================
+
+Willkommen! Diese Anleitung hilft dir dabei, 'sleephistory' auf deinem Computer
+zu starten – selbst wenn du noch nie zuvor ein Terminal-Programm benutzt hast.
+
+-------------------------------------------------------------------------------
+1. WAS SIND DAS FÜR DATEIEN? (Die Grundlagen)
+-------------------------------------------------------------------------------
+
+Hier ist eine einfache Übersicht, was sich in diesem Ordner befindet:
+
+*  installer.sh     -> Ein Helfer, der alles an den richtigen Ort kopiert,
+                       damit du die App in deinem Startmenü finden kannst.
+*  uninstaller.sh   -> Ein Helfer, um das Programm wieder vollständig von
+                       deinem System zu entfernen.
+*  [src]            -> Der Quellcode. Menschen lesen dies, Computer
+                       wandeln es in das eigentliche Programm um.
+*  [native-build]   -> Ein Ordner, in dem das Programm nach dem Erstellen
+                       gespeichert wird.
+*  native-build.sh  -> Ein Skript, das das "Rezept" in das fertige Programm
+                       verwandelt (Kompilieren).
+*  [assets]         -> Enthält das Icon und die Verknüpfung für dein Startmenü.
+*  CMakeLists.txt   -> Technische Anweisungen für den Computer.
+*  README.md        -> Die Haupt-Hilfedatei, die erklärt, wofür das Projekt da ist und wie du es nutzt und wie es funktioniert.
+
+-------------------------------------------------------------------------------
+2. DAS PROGRAMM TESTEN (Ohne Installation)
+-------------------------------------------------------------------------------
+
+Wenn du nur kurz schauen möchtest, ob es funktioniert, ohne dauerhafte
+Änderungen vorzunehmen:
+
+1. Öffne dein Terminal in diesem Ordner.
+2. Falls du hier eine Datei namens 'sleephistory' siehst, gib diese Befehle ein:
+
+   chmod +x sleephistory
+   ./sleephistory
+
+3. Falls die Datei fehlt, musst du sie zuerst erstellen (siehe Schritt 3).
+
+-------------------------------------------------------------------------------
+3. INSTALLATION (Empfohlen)
+-------------------------------------------------------------------------------
+
+Du hast zwei Möglichkeiten, das Programm startklar zu machen:
+
+A) DER BESTE WEG (Selbst erstellen):
+   Dies stellt sicher, dass das Programm perfekt zu deinem Computer passt.
+   1. Rechtsklick in diesen Ordner -> "Im Terminal öffnen".
+   2. Tippe: ./installer.sh
+   3. Wähle Option 1 ("Run native-build.sh").
+   4. Folge den Anweisungen auf dem Bildschirm.
+
+B) DER SCHNELLE WEG (Fertige Datei nutzen):
+   Nutze dies, wenn du nicht warten möchtest, bis das Programm gebaut wurde.
+   1. Stelle sicher, dass eine Datei namens 'sleephistory' im Ordner liegt.
+   2. Starte: ./installer.sh
+   3. Wähle Option 3 ("Use precompiled binary").
+
+-------------------------------------------------------------------------------
+4. WELCHE INSTALLATIONSART SOLL ICH WÄHLEN?
+-------------------------------------------------------------------------------
+
+Wenn der Installer dich fragt, hast du zwei Optionen:
+
+*  LOKAL (Option 2): Am besten für Anfänger. Es wird kein Passwort benötigt
+   und das Programm wird nur für DICH installiert.
+*  GLOBAL (Option 1): Installiert es für alle Benutzer dieses PCs. Du wirst
+   dein System-Passwort (sudo) eingeben müssen.
+
+-------------------------------------------------------------------------------
+5. WIE STARTE ICH DIE APP SPÄTER?
+-------------------------------------------------------------------------------
+
+Nach einer erfolgreichen Installation:
+1. Öffne dein Startmenü (drücke die "Super/Windows"-Taste).
+2. Suche nach "SleepHistory".
+3. Klicke auf das Icon, um es zu starten!
+
+-------------------------------------------------------------------------------
+6. ALLES WIEDER ENTFERNEN
+-------------------------------------------------------------------------------
+
+Wenn du das Programm nicht mehr möchtest, starte einfach:
+./uninstaller.sh
+
+Folge den Abfragen, um alle Dateien von deinem System zu löschen.
+
+HINWEIS BEZÜGLICH DES CACHE ORDNERS:
+Selbst nach der Deinstallation bleibt ein kleiner Datenordner hier bestehen:
+~/.cache/sleephistory/
+
+Dieser Ordner ist ein "essenzieller Index". Er speichert verarbeitete Daten,
+um die App massiv zu beschleunigen. Außerdem hilft er dabei, den Verlauf
+lückenlos anzuzeigen, selbst wenn alte System-Logs gelöscht werden.
+Der Uninstaller löscht diesen Ordner NICHT, um versehentlichen Datenverlust
+deiner Historie zu vermeiden.
+
+Wenn du sicher bist, dass du SleepHistory NIE wieder benutzen wirst und
+wirklich alles löschen möchtest, kannst du diesen Ordner manuell löschen.
+===============================================================================
