@@ -69,7 +69,7 @@ void JournalCLI::Run(JournalBackend &backend, const string &arg) {
 
     prepareEvents(mode, date, session, events);
 
-    if (events.empty()) {
+    if ((mode == ViewMode::SESSION && events.size() <= 1)||(mode != ViewMode::SESSION && events.empty())) {
         cout << ANSI_DIM << "No events found for this selection." << ANSI_RESET << "\n";
         return;
     }

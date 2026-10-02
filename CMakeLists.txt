@@ -48,4 +48,4 @@ add_executable(sleephistory src/main.cpp
         src/JournalCLI.cpp
         src/JournalBackend.cpp)
 
-target_link_libraries(sleephistory PRIVATE ftxui::screen ftxui::dom ftxui::component fmt::fmt) # fmt ersetzt std::format (für kompatibilität)
+target_link_libraries(sleephistory PRIVATE ftxui::screen ftxui::dom ftxui::component fmt::fmt) # fmt ersetzt std::format (für kompatibilitaet)

@@ -392,7 +392,7 @@ ftxui::Element JournalTUI::RenderEvents() {
                color(get_tui_color(Color::Red, Color::Red));
     }
 
-    if (current_events.empty()) {
+    if ((current_view == ViewMode::SESSION && current_events.size() <= 1)||(current_view != ViewMode::SESSION && current_events.empty())) {
         return text("No events found for this selection.") | center | dim;
     }
 

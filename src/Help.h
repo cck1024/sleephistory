@@ -25,7 +25,7 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Colors.h"
 #include "Requirements.h"
 
-static constexpr auto VERSION = "1.0.4";
+static constexpr auto VERSION = "1.0.5";
 static constexpr auto BUILD = "2026-10-01";
 
 inline std::string get_help_text() {
