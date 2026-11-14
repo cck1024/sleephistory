@@ -26,7 +26,6 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 vector<string> execCommand(const string& cmd);
 
 // Ein simpler JSON-Parser, der Timestamp und Message extrahiert
-// (Spart Einbindung einer riesigen externen JSON-Bibliothek)
 bool parseJournalJson(const string& json_line, uint64_t& ts_us, string& msg);
 
 // Logic

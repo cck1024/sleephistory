@@ -14,6 +14,8 @@ Here is a simple map of what is inside this folder:
 *  installer.sh     -> A helper that puts everything in the right place so
                        you can find the app in your Start Menu.
 *  uninstaller.sh   -> A helper to completely remove the program from your system.
+*  cache-diff.sh    -> A script that visually compares sleephistory output
+                       with and without caching.
 *  [src]            -> The source code. Humans read this, computers
                        convert it into the actual program.
 *  [native-build]   -> A folder where the program is placed after you build it.

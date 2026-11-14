@@ -41,6 +41,7 @@ int main(int argc, char** argv) {
     try {
         string command_arg = "";
         bool color_set_manually = false;
+        bool no_cache = false;
 
         // --- FARBMODUS ERKENNEN ---
         for (int i = 1; i < argc; ++i) {
@@ -60,6 +61,11 @@ int main(int argc, char** argv) {
         for (int i = 1; i < argc; ++i) {
             string arg = argv[i];
 
+            if (arg == "--no-cache") {
+                no_cache = true;
+                continue;
+            }
+
             // Farbmodi ignorieren
             if (arg == "-c0" || arg == "-c1" || arg == "-c2") continue;
 
@@ -69,9 +75,6 @@ int main(int argc, char** argv) {
                 return 0;
             }
             if (arg == "--help"||arg == "-h") {
-                // cout << "run without arguments to start TUI mode" << endl;
-                // cout << "run with DD/MM/YYYY or session id for CLI output" << endl;
-                // cout << "--version for appversion" << endl;
                 cout << get_help_text() << endl;
                 LOG_DEBUG("sleephistory help page shown, exiting normally.");
                 return 0;
@@ -81,11 +84,6 @@ int main(int argc, char** argv) {
                 command_arg += " "; // Leerzeichen zwischen den Argumenten einfuegen
             }
             command_arg += arg;
-
-            // } else {
-            //     cerr << "Too many arguments. Run with --help." << endl;
-            //     return 1;
-            // }
         }
 
         int sysD_version = get_systemd_version();
@@ -116,7 +114,7 @@ int main(int argc, char** argv) {
             return 1;
         }
 
-        JournalBackend backend;
+        JournalBackend backend(no_cache);
 
         // CLI or TUI?
         if (!command_arg.empty()) {

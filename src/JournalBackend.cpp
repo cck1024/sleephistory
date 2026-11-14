@@ -21,7 +21,12 @@ using namespace std;
 
 
 // ---  CACHE INITIALISIERUNG ---
-void JournalBackend::initCache() {
+void JournalBackend::initCache(bool no_cache) {
+    if (no_cache) {
+        cerr << "\nThis can take longer as caching is disabled (--no-cache was specified)." << endl;
+        LOG_DEBUG("Caching disabled via --no-cache.");
+        return;
+    }
     const char *home_env = getenv("HOME");
     if (!home_env) { // Kein Home-Verzeichnis, kein Cache
         cerr << "\nThis can take longer as caching is disabled, because your home directory does not exist or is not accessible." << endl;

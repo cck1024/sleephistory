@@ -434,10 +434,16 @@ Caching requires:
 2. Read and Write permission in ~/.cache/sleephistory/
 3. ~/.cache/sleephistory/donotcache to NOT exist.
 
-That's right, caching can be DISABLED by creating an empty _donotcache_ file in sleephistory's cache directory.
+That's right, caching can be permanently DISABLED by creating an empty _donotcache_ file in sleephistory's cache directory.
 
 ```bash
 $ touch ~/.cache/sleephistory/donotcache
+```
+
+To disable caching for a single run it is also possible to start sleephistory with the `--no-cache` argument.
+
+```bash
+$ sleephistory --no-cache 
 ```
 
 # 6. License

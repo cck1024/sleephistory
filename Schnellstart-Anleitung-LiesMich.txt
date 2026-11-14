@@ -15,6 +15,8 @@ Hier ist eine einfache Übersicht, was sich in diesem Ordner befindet:
                        damit du die App in deinem Startmenü finden kannst.
 *  uninstaller.sh   -> Ein Helfer, um das Programm wieder vollständig von
                        deinem System zu entfernen.
+*  cache-diff.sh    -> Ein Skript, das die sleephistory-Ausgabe mit und ohne
+                       Cache visuell vergleicht.
 *  [src]            -> Der Quellcode. Menschen lesen dies, Computer
                        wandeln es in das eigentliche Programm um.
 *  [native-build]   -> Ein Ordner, in dem das Programm nach dem Erstellen

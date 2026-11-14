@@ -25,8 +25,8 @@ along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #include "Colors.h"
 #include "Requirements.h"
 
-static constexpr auto VERSION = "1.0.5";
-static constexpr auto BUILD = "2026-10-01";
+static constexpr auto VERSION = "1.0.6";
+static constexpr auto BUILD = "2026-11-15";
 
 inline std::string get_help_text() {
     return
@@ -42,6 +42,7 @@ inline std::string get_help_text() {
     "  <DATE>                   Shows output for a specific date (see DATE FORMATS below)\n" +
     "  --markdown, -md          Parse output in Markdown format\n" +
     "  -c0, -c1, -c2            Force Color Mode (Mono, Basic, Rich)\n" +
+    "  --no-cache               Disable disk caching for this run\n" +
     "  --help, -h               Shows this help page\n" +
     "  --version, -v            Shows app version and build date\n\n" +
 

@@ -57,7 +57,7 @@ private:
     vector<BootEntry> boot_index;
 
     // --- CACHE INITIALISIERUNG ---
-    void initCache();
+    void initCache(bool no_cache);
     // --- INDEX DATEI AKTUALISIEREN ---
     void updateBootIndex();
     int getSessionIdByTimestamp(uint64_t ts_us);
@@ -68,11 +68,11 @@ private:
     Session loadSessionFromCache(unsigned int session_id, const string& boot_id, bool& is_tmp);
 
 public:
-    JournalBackend() {
+    JournalBackend(bool no_cache = false) {
         if (isatty(STDERR_FILENO)) {
             std::cerr << "Loading... Please wait..." << std::flush;
         }
-        initCache();
+        initCache(no_cache);
         if (isatty(STDERR_FILENO)) {
             std::cerr << "\r\033[K" << std::flush;
         }
